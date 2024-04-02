@@ -5,7 +5,7 @@ use reqwest::Client;
 use scraper::{Html, Selector};
 use std::collections::HashSet;
 
-#[tokio::main] // main function is not allower to be asyn, to counter that we are using tokio
+#[tokio::main] // main function is not allowed to be asyn, to counter that we are using tokio
 async fn main() {
     let search:&str = "<YOUR_SEARCH_HERE>";
     let num_pages:u8 = <NUM_OF_PAGES_TO_SEARCH>;

@@ -10,7 +10,7 @@ async fn main() {
     let search:&str = "latest news, sentiments and technical analysis on oil inda limited";
     let num_pages:u8 = 5;
     
-    let search_urls_vec: Vec<_> = serp(search, num_pages).await;
+    let search_urls_vec: Vec<String> = serp(search, num_pages).await;
     println!("{:?}", search_urls_vec);
 }
 

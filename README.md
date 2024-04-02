@@ -11,16 +11,16 @@ Before running this project, make sure you have the following installed:
 
 ## Getting Started
 
-To get started with this project, follow these steps:
+* To get started with this project, follow these steps:
 
-1. Clone the repository: ```git clone https://github.com/Pseud0-space/Gserp.git```
-2. Build the project: ```cargo build```
-3. Run the project: ```cargo run```
+  1. Clone the repository: ```git clone https://github.com/Pseud0-space/Gserp.git```
+  2. Build the project: ```cargo build```
+  3. Run the project: ```cargo run```
 
-To use with command line arguments:
+* To use with command line arguments:
 
-1. Rename serpV2.rs to main.rs
-2. Run the project: ```cargo run -- -s "<YOU_SEARCH>" -n <NUMBER_OF_PAGES>```
+  1. Rename serpV2.rs to main.rs
+  2. Run the project: ```cargo run -- -s "<YOU_SEARCH>" -n <NUMBER_OF_PAGES>```
 
 The program will output a vector containing the scraped search URLs.
 

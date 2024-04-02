@@ -27,4 +27,3 @@ This project uses the following dependencies:
 - `scraper`: For parsing HTML
 
 These dependencies are specified in the `Cargo.toml` file and will be automatically downloaded and installed when you build the project.   
-Contributions are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.

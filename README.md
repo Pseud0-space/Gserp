@@ -13,7 +13,7 @@ Before running this project, make sure you have the following installed:
 
 To get started with this project, follow these steps:
 
-1. Clone the repository: ```git clone https://github.com/your-username/google-search-scraper.git```
+1. Clone the repository: ```git clone https://github.com/Pseud0-space/Gserp.git```
 2. Build the project: ```cargo build```
 3. Run the project: ```cargo run```
 

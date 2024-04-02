@@ -3,22 +3,24 @@ extern crate scraper;
 
 use reqwest::Client;
 use scraper::{Html, Selector};
-use std::collections::HashSet;
 
-#[tokio::main] // main function is not allowed to be asyn, to counter that we are using tokio
+#[tokio::main] // main function is not allower to be asyn, to counter that we are using this
 async fn main() {
     let search:&str = "<YOUR_SEARCH_HERE>";
-    let num_pages:u8 = <NUM_OF_PAGES_TO_SEARCH>;
+    let num_pages:u8 = <NUMBER_OF_PAGES_TO_SEARCH>;
     
     let search_urls_vec: Vec<String> = serp(search, num_pages).await;
-    println!("{:?}", search_urls_vec);
+
+    println!("[Search Query] >> {}", search);
+    println!("[Number of Pages] >> {}\n", num_pages);
+    println!("URLs:\n\n{:?}", search_urls_vec);
 }
 
 async fn serp(search_query:&str, num:u8) -> Vec<String>{
     let client = Client::new();
     const BASE_URL: &str = "https://www.google.com/search";
 
-    let mut search_urls = HashSet::new();
+    let mut search_urls:Vec<String> = Vec::new();
 
     let blacklist = vec![
         "https://www.google.com/search",
@@ -51,15 +53,14 @@ async fn serp(search_query:&str, num:u8) -> Vec<String>{
                     search_url = search_url.split("&").nth(0).unwrap_or_default();
 
                     if !blacklist.iter().any(|blacklisted_url| search_url.contains(blacklisted_url)){
-                        search_urls.insert(search_url.to_string());
+                        search_urls.push(search_url.to_string());
                     }
                 }
             }
         }
     }
 
-    let mut search_urls_vec: Vec<_> = search_urls.into_iter().collect();
-    search_urls_vec.dedup(); // removes consecutive duplicates, if any.
+    search_urls.dedup(); // removes consecutive duplicates, if any.
 
-    return search_urls_vec;
+    return search_urls;
 }   

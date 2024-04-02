@@ -4,7 +4,7 @@ extern crate scraper;
 use reqwest::Client;
 use scraper::{Html, Selector};
 
-#[tokio::main] // main function is not allower to be asyn, to counter that we are using this
+#[tokio::main] // main function is not allowed to be async, to counter that we are using tokio
 async fn main() {
     let search:&str = "<YOUR_SEARCH_HERE>";
     let num_pages:u8 = <NUMBER_OF_PAGES_TO_SEARCH>;

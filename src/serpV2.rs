@@ -3,7 +3,6 @@ extern crate scraper;
 
 use reqwest::Client;
 use scraper::{Html, Selector};
-use std::collections::HashSet;
 use std::env;
 
 async fn serp(search_query:&str, num:u8) -> Vec<String>{
